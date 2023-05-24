@@ -25,6 +25,7 @@ const reunionService = {
                 console.error('Erreur lors de l\'exécution de la requête SELECT :', error);
                 callback({ message: 'Erreur serveur' }, null);
             } else {
+                console.log(results);
                 callback(null, { reunions: results });
             }
         });
@@ -39,6 +40,7 @@ const reunionService = {
                 console.error('Erreur lors de l\'exécution de la requête SELECT :', error);
                 callback({ message: 'Erreur serveur' }, null);
             } else if (results.length > 0) {
+                console.log(results);
                 callback(null, { reunion: results[0] });
             } else {
                 callback({ message: 'Réunion non trouvée' }, null);
