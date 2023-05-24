@@ -5,6 +5,13 @@ npm 9.3.0
 
 xampp for mysql
 
+# execute
+node ./reunionMicroservice.js
+
+node ./userMicroservice.js
+
+node ./apiGateway.js
+
 # roots
 users/ get post {name, email}
 users/id get put {name, email} delet {id}
