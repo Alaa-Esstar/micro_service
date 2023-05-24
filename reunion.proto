@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package reunion;
+
+message Reunion {
+  int32 id = 1;
+  string sujet = 2;
+  string date = 3;
+  string location = 4;
+  repeated int32 user_ids = 5;
+}
+
+message GetReunionRequest {
+  int32 reunion_id = 1;
+}
+
+message GetReunionResponse {
+  Reunion reunion = 1;
+}
+
+message CreateOrUpdateReunionRequest {
+  int32 reunion_id = 1;
+  string sujet = 2;
+  string date = 3;
+  string location = 4;
+  repeated int32 user_ids = 5;
+}
+
+message CreateOrUpdateReunionResponse {
+  Reunion reunion = 1;
+}
+
+message DeleteReunionRequest {
+  int32 reunion_id = 1;
+}
+
+message DeleteReunionResponse {
+  bool success = 1;
+}
+
+message getReunionsRequest {
+}
+
+message getReunionsResponse {
+  repeated Reunion Reunion = 1;
+}
+
+service ReunionService {
+  rpc GetReunion(GetReunionRequest) returns (GetReunionResponse) {}
+  rpc CreateOrUpdateReunion(CreateOrUpdateReunionRequest) returns (CreateOrUpdateReunionResponse) {}
+  rpc DeleteReunion(DeleteReunionRequest) returns (DeleteReunionResponse) {}
+  rpc getReunions(getReunionsRequest) returns (getReunionsResponse) {}
+}
