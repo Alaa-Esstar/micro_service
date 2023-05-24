@@ -1,3 +1,6 @@
+## crée des reunion et des utilisateur
+## ajouter des utilisateur a des reunion
+
 # micro_service
 node 18.13.0
 
